@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^1.4.0",
     "next": "13.3.1",
     "next-auth": "^4.22.1",
+    "nextjs-cors": "^2.1.2",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }

@@ -2,10 +2,45 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import { useEffect } from 'react'
+import axios from 'axios';
+let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgyNzU0ODQ0LCJpYXQiOjE2ODI2Njg0NDQsImp0aSI6IjFjNGY2NjNkNTlkMTRmOGY5NWMyNGFjNTFjYmVmMDk0IiwidXNlcl9pZCI6NH0.NL4MRvA_24H7H_aKLw0GSd3wbmvllgirWaN2ySxHmBE';
+
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+
+  useEffect(()=>{
+    console.log('Loaded');
+     
+      fetch('/api/handleDraft')
+      .then(resp => {
+        //console.log('resp--->',resp.json());
+        return resp.json()
+      })
+      .then(json => {
+        console.log('data---->',json);
+        //console.log(JSON.stringify(json)
+      }) 
+      
+ 
+    /* const axos = axios.create({
+      baseURL: 'https://387c-116-74-34-218.ngrok-free.app',
+      timeout: 1000,
+      headers: {
+                  'Content-Type': 'application/json',
+                  "Access-Control-Allow-Origin": "*",
+                  'Authorization': 'Bearer '+token
+                }
+    });
+    axos.get('/api/student/student/profile/4')
+    .then(response => {
+        console.log('response---->',response);
+    })  */
+    
+
+  },[]);
   return (
     <>
       <Head>
